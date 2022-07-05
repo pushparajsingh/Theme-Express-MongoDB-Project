@@ -1,0 +1,45 @@
+<% include header %>
+
+<% include usernav %>
+
+
+	<!-- page starts -->
+	<div id="page">
+	<center>	
+			<div class="box">
+				<h2>Raise Funds To Make Charity</h2>
+				<h3>Donate &#8377;100 For Charity</h3>
+				
+				<form action=<%= paypalURL %> method="post">
+					<!-- Identify your business so that you can collect the payments. -->
+					<input type="hidden" name="business" value=<%= paypalID %>>
+					
+					<!-- Specify a Buy Now button. -->
+					<input type="hidden" name="cmd" value="_xclick">
+					
+					<!-- Specify details about the item that buyers will purchase. -->
+					<input type="hidden" name="item_name" value="funds">
+					<!--<input type="hidden" name="item_number" value=1>-->
+					<input type="hidden" name="amount" value=<%= price %>>
+					<input type="hidden" name="currency_code" value="USD">
+					
+					<!-- Specify URLs -->
+					<input type='hidden' name='cancel_return' value='http://localhost:3000/users/cancel' >
+					<input type='hidden' name='return' value='http://localhost:3000/users/payment/?price=
+					<%= price %>&uid=<%= sunm %>' >
+					
+					<!-- Display the payment button. -->
+					<input type="image" name="submit" border="0"
+					height="100" width="250" src="../images/donate.png" alt="PayPal - The safer, easier way to pay online">
+					<img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+				</form>
+
+
+
+			</div>
+			<br class="clearfix" />
+	</center>		
+	</div>
+	<!-- page ends -->
+
+<% include userfooter %>

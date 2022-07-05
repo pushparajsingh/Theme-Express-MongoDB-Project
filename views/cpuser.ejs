@@ -1,0 +1,41 @@
+<% include header %>
+
+<% include usernav %>
+
+	<!-- page starts -->
+	<div id="page">
+	<center>	
+	<div class="box">
+	<h2>Change Password Here!!!</h2>
+    <font style="font-size:20px;" color="blue" ><%= output %></font>
+				<form method="POST" action="/users/cpuser">
+				<table  cellspacing="10">
+				<tr>
+				<td>Old Password</td>
+				<td>
+                    <input type="hidden" name="username" value="<%= sunm %>"/>
+                    <input type="password" name="opass" required />
+                </td>	
+				</tr>
+                <tr>
+                <td>New Password</td>
+                <td><input type="password" name="npass" required /></td>	
+                </tr>
+                <tr>
+                <td>Confirm New Password</td>
+                <td><input type="password" name="cnpass" required /></td>	
+                </tr>
+				<tr>
+				<td>
+				<input type="submit" value="Change Password" />	
+				</td>	
+				</tr>
+				</table>	
+				</form>
+	</div>
+    <br class="clearfix" />
+	</center>		
+	</div>
+	<!-- page ends -->
+
+<% include userfooter %>

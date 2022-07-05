@@ -1,0 +1,36 @@
+<% include header %>
+
+<% include adminnav %>
+
+<!-- page starts -->
+	<div id="page">
+	<center>	
+			<div class="box">
+				<h1>Add Category Here!!!</h1>
+				<font style="font-size:20px;" color="blue" ><%= output %></font>
+				<form method="POST" action="/admin/addcategory" enctype="multipart/form-data">
+				<table  cellspacing="10">
+				<tr>
+				<td>Category Name</td>
+				<td><input type="text" name="catnm" /></td>	
+				</tr>	
+				<tr>
+				<td>Category Icon</td>
+				<td><input type="file" name="caticon" /></td>	
+				</tr>
+				<tr>
+				<td>
+				<input type="submit" value="Add category" />	
+				</td>	
+				</tr>
+				</table>	
+				</form>
+
+
+			</div>
+			<br class="clearfix" />
+	</center>		
+	</div>
+	<!-- page ends -->
+
+<% include userfooter %>

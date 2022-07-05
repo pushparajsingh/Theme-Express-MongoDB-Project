@@ -1,0 +1,54 @@
+<% include header %>
+
+<% include adminnav %>
+
+<!-- page starts -->
+<div id="page">
+<center>	
+<div class="box">
+<h2>View & Manage Users</h2>
+<table cellspacing="10">
+<tr>
+<th>UserID</th>
+<th>Name</th>
+<th>Username</th>
+<th>Mobile</th>
+<th>Address</th>
+<th>City</th>
+<th>Gender</th>
+<th>Info</th>
+<th>Status</th>
+<th>Action</th>    
+</tr>    
+<tr><td colspan="10" ><hr/></td></tr>
+<% for(let row of result) { %>
+<tr>
+<td><%= row._id %></td>
+<td><%= row.name %></td>
+<td><%= row.username %></td>
+<td><%= row.mobile %></td>
+<td><%= row.address %></td>
+<td><%= row.city %></td>
+<td><%= row.gender %></td>
+<td><%= row.info %></td>
+<td>
+<% if(row.status==1) { %>
+<a style="color:orange;" href="/admin/manageuserstatus?s=block&_id=<%= row._id %>">Block User</a>    
+<% } else { %>
+<a style="color:green;" href="/admin/manageuserstatus?s=verify&_id=<%= row._id %>">Verify User</a>    
+<% } %>            
+</td>
+<td>
+<a style="color:red;" href="/admin/manageuserstatus?s=delete&_id=<%= row._id %>">Delete User</a>    
+</td>
+</tr>
+<tr><td colspan="10" ><hr/></td></tr>
+<% } %>
+</table>
+</div>
+<br class="clearfix" />
+</center>		
+</div>
+<!-- page ends -->
+
+<% include userfooter %>

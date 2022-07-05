@@ -1,0 +1,54 @@
+<% include header %>
+
+<% include nav %>
+
+<% include slider %>
+
+
+	<!-- page starts -->
+	<div id="page">
+
+		<!-- content starts -->
+		<div id="content">
+			<div class="box">
+<h1>View & Manage User Details</h1><br/>
+<table  cellspacing="10" style="border:2px solid black;" >
+<tr>
+<th>Eno</th>
+<th>Enm</th>	
+<th>Esal</th>
+</tr>	
+<tr><td colspan="3"><hr/></td></tr>
+<% for(let row of empDetails) { %>
+<tr>
+<td><%= row.eno %></td>
+<td><%= row.enm %></td>
+<td><%= row.esal %></td>
+</tr>
+<tr><td colspan="3"><hr/></td></tr>
+<% } %>
+</table>
+			</div>
+			<br class="clearfix" />
+		</div>
+		<!-- content ends -->
+
+		<!-- sidebar starts -->	
+		<div id="sidebar">
+			<div class="box">
+				<h3>Social Links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">@Facebook</a></li>
+					<li><a href="#">@Twitter</a></li>
+					<li><a href="#">@Instagram</a></li>
+					<li><a href="#">@Gmail</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- sidebar ends -->
+
+		<br class="clearfix" />
+	</div>
+	<!-- page ends -->
+
+<% include footer %>
